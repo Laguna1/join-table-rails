@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+User.destroy_all
+Category.destroy_all
+
+50.times do
+  User.create!(fullname: Faker::Name.name)
+end
+
+10.times do
+  Category.create!(name: Faker::Games::Pokemon.name)
+end
